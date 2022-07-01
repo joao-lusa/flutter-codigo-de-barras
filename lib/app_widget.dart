@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:payflow/modules/barcode_scanner/barcode_scanner_page.dart';
 import 'package:payflow/modules/home/home_page.dart';
 
 import 'shared/themes/app_colors.dart';
 
 class AppWidget extends StatelessWidget {
-  const AppWidget({Key? key}) : super(key: key);
+  //não quebrar na hora de viara o celular
+  AppWidget() {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.portraitUp,
+    ]);
+  }
 
   // This widget is the root of your application.
   @override

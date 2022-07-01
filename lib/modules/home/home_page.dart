@@ -4,7 +4,7 @@ import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_text_style.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({ Key? key }) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -13,8 +13,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final controller = HomeController();
   final pages = [
-    Container(color: Colors.red,),
-    Container(color: Colors.blue,),
+    Container(
+      color: Colors.red,
+    ),
+    Container(
+      color: Colors.blue,
+    ),
   ];
   @override
   Widget build(BuildContext context) {
@@ -27,22 +31,18 @@ class _HomePageState extends State<HomePage> {
           child: Center(
             child: ListTile(
               title: Text.rich(
-                TextSpan(text: "Olá, ", style: AppTextStyles.titleRegular,
-                  children: [
-                    TextSpan(text: "João", style: AppTextStyles.titleBoldBackground)
-                  ]),
+                TextSpan(
+                    text: "Olá, ",
+                    style: AppTextStyles.titleRegular,
+                    children: [
+                      TextSpan(
+                          text: "Bem vindo",
+                          style: AppTextStyles.titleBoldBackground)
+                    ]),
               ),
               subtitle: Text(
                 "Mantenha suas contas em dia",
                 style: AppTextStyles.captionShape,
-              ),
-              trailing: Container(
-                height: 48,
-                width: 48,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(5),
-                ),
               ),
             ),
           ),
@@ -51,20 +51,18 @@ class _HomePageState extends State<HomePage> {
       body: pages[controller.currentPage],
       bottomNavigationBar: Container(
         height: 90,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
           IconButton(
-            onPressed: (){
-              controller.setPage(0);
-              setState(() {});
-            }, 
-            icon: Icon(
-              Icons.home,
-              color: AppColors.primary,
-            )),
+              onPressed: () {
+                controller.setPage(0);
+                setState(() {});
+              },
+              icon: Icon(
+                Icons.home,
+                color: AppColors.primary,
+              )),
           GestureDetector(
-            onTap: (){
+            onTap: () {
               Navigator.pushNamed(context, "/barcode_scanner");
             },
             child: Container(
@@ -74,20 +72,18 @@ class _HomePageState extends State<HomePage> {
                 color: AppColors.primary,
                 borderRadius: BorderRadius.circular(5),
               ),
-              child: Icon(
-                Icons.add_box_outlined
-              ),
+              child: Icon(Icons.add_box_outlined),
             ),
           ),
           IconButton(
-            onPressed: (){
-              controller.setPage(1);
-              setState(() {});
-            }, 
-            icon: Icon(
-              Icons.description_outlined,
-              color: AppColors.body,
-            ))
+              onPressed: () {
+                controller.setPage(1);
+                setState(() {});
+              },
+              icon: Icon(
+                Icons.description_outlined,
+                color: AppColors.body,
+              ))
         ]),
       ),
     );
