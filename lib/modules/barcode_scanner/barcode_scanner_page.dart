@@ -16,14 +16,14 @@ class BarcodeScannerPage extends StatefulWidget {
 class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
   @override
   Widget build(BuildContext context) {
-    return BottomShetWidget(
-      title: "Não foi possível identificar um cócigo de barras.",
-      subtitle: "Tente escanear novamente ou digite o código do seu boleto.",
-      primaryLabel: "Escanear novamente",
-      primaryOnPressed: () {},
-      secondaryLabel: "Digitar código",
-      secondaryOnPressed: () {},
-    );
+    // return BottomShetWidget(
+    //   title: "Não foi possível identificar um cócigo de barras.",
+    //   subtitle: "Tente escanear novamente ou digite o código do seu boleto.",
+    //   primaryLabel: "Escanear novamente",
+    //   primaryOnPressed: () {},
+    //   secondaryLabel: "Digitar código",
+    //   secondaryOnPressed: () {},
+    // );
     return SafeArea(
       top: true,
       bottom: true,

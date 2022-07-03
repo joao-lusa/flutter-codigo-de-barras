@@ -12,7 +12,7 @@ class AppFirebase extends StatefulWidget {
 }
 
 class _AppFirebaseState extends State<AppFirebase> {
-    final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
   @override
   Widget build(BuildContext context) {
@@ -33,12 +33,12 @@ class _AppFirebaseState extends State<AppFirebase> {
         if (snapshot.connectionState == ConnectionState.done) {
           return AppWidget();
         }
-        
+
         return Material(
           child: Center(child: CircularProgressIndicator()),
         );
       },
     );
   }
-  
+  //1:24
 }
